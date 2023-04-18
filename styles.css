@@ -1,0 +1,173 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --bg-color: #ffffff;
+  --bg-btn-primary-color: hsl(240, 9%, 89%);
+  --bg-btn-secondary-color: hsl(194, 97%, 31%);
+  --bg-btn-border: #000000;
+  --text-color: hsl(240, 6%, 21%);
+  --btn-fill: #323238;
+  --btn-fill-hover: #ffffff;
+}
+
+.dark {
+  --bg-color: #000000;
+  --bg-btn-primary-color: #29292E;
+  --bg-btn-secondary-color:#0A3442;
+  --text-color:#FFFFFF;
+  --btn-fill-hover: #ffffff;
+  --btn-fill: #C4C4CC;
+}
+
+button, button svg path {
+  border: none;
+  fill: var(--btn-fill);
+}
+
+body {
+  display: grid;
+  padding: 3rem;
+  
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  
+  font-family: 'Roboto', sans-serif;  
+}
+
+header {
+  justify-self: end;
+  align-self: start;
+}
+
+header button {
+  background: transparent;
+  cursor: pointer;
+  transition: transform .5s;
+}
+
+header button:hover {
+  transform: scale(1.1);
+}
+
+main {
+  display: grid;
+  justify-self: center;
+  align-self: center; 
+
+  grid-template-areas: "A B";
+  gap: 10rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 80rem;   
+}
+
+#timer {
+  grid-area: A;  
+}
+
+.time {
+  font-size: 12rem;
+  color: var(--text-color);
+  display: flex;
+  margin-bottom: 4.8rem; 
+}
+
+#controls {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#controls button {
+  background: transparent;
+  cursor: pointer;
+}
+
+
+#sounds {
+  grid-area: B;    
+}
+
+#btn-sound {
+  display: grid;  
+  gap: 3.2rem;
+  grid-template-areas: 
+  "C D"
+  "E F";  
+}
+
+
+#btn-sound button {
+  background: var(--bg-btn-primary-color);
+  border-radius: 2.4rem;
+  padding: 4.8rem;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;  
+  transition: all 0.5s ease;
+}
+
+#btn-sound button:hover, #btn-sound button:hover svg path {
+  background: var(--bg-btn-secondary-color);
+  fill: var(--btn-fill-hover);
+  transform: scale(1.02);
+}
+#btn-sound button:hover .volume {
+  background-color: var(--btn-fill-hover)
+}
+
+.forest {
+  grid-area: C;
+}
+
+.rain {
+  grid-area: D;
+}
+
+.coffeeshop {
+  grid-area: E;
+}
+
+.fireplace {
+  grid-area: F;
+}
+
+
+#btn-sound .active, .active svg path  {
+  background: var(--bg-btn-secondary-color);
+  border: 1px solid var(--bg-btn-border);
+  fill: var(--btn-fill-hover);
+ 
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.392));
+}
+
+.volume {
+  background-color: var(--btn-fill);
+  appearance: none;
+  width: 9rem;
+  height: .4rem;
+  border-radius: 5px;
+  
+}
+
+#btn-sound .active input {
+  background-color: var(--btn-fill-hover)
+}
+
+.hide {
+  display: none;
+}
+
